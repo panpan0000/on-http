@@ -10,11 +10,9 @@ RUN mkdir -p ./node_modules \
   && ln -s /RackHD/on-core ./node_modules/on-core \
   && ln -s /RackHD/on-core/node_modules/di ./node_modules/di \
   && apt-get install -y unzip curl \
-  && npm install --ignore-scripts \
-  && npm install apidoc \
+  && npm config set -g production false \
+  && npm install --unsafe-perm \
   && npm run taskdoc \
-  && /RackHD/on-http/install-web-ui.sh \
-  && /RackHD/on-http/install-swagger-ui.sh \
   && npm prune --production
 
 EXPOSE 9080 9090
