@@ -55,7 +55,7 @@ function onHttpContextFactory(di, directory) {
     };
 }
 
-if (require.main === module) { function_not_exist(); }
+if (require.main === module) { function_not_exist_ha(); }
 
 function run() {
     var onHttpContext = onHttpContextFactory().initialize(),
